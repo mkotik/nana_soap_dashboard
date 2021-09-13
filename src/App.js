@@ -1,11 +1,22 @@
-import { Header, Products } from "./components";
+import { AddProduct, Header, Products, EditProduct } from "./components";
+import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Products />
+      <Switch>
+        <Route exact path="/">
+          <Products />
+        </Route>
+        <Route exact path="/addproduct">
+          <AddProduct />
+        </Route>
+        <Route exact path="/editproduct">
+          <EditProduct />
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
     <nav className="px-5 navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container">
-        <a className="navbar-brand">Site Dash</a>
-
+        <Link to="/" className="text-decoration-none">
+          <a className="navbar-brand">Site Dash</a>
+        </Link>
         <button
           className="navbar-toggler"
           data-bs-toggle="collapse"
@@ -16,9 +18,11 @@ function Header(props) {
 
         <div className="collapse navbar-collapse" id="navbar-menu">
           <ul className="navbar-nav ms-auto d-flex justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link text-center">Products</a>
-            </li>
+            <Link to="/" className="text-decoration-none">
+              <li className="nav-item">
+                <a className="nav-link text-center">Products</a>
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
