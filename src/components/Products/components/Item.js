@@ -22,10 +22,10 @@ function Item(props) {
         <h5>20</h5>
       </div>
       <div className="col3">
-        <h5>20</h5>
+        <h5>150</h5>
       </div>
       <div className="col4">
-        <h5 className="salesText">20</h5>
+        <h5 className="salesText text-success">$1200.00</h5>
       </div>
       <div className="col5">
         <div
