@@ -68,6 +68,7 @@ $money-green: #48ad96;
       }
       .optionsHead {
         width: 10%;
+        text-align: center;
       }
     }
     .item {
@@ -105,7 +106,7 @@ $money-green: #48ad96;
       .col5 {
         width: 10%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         .imgWrap:hover {
           cursor: pointer;
           background-color: rgba(209, 205, 205, 0.733);
