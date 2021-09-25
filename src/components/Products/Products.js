@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/Products.scss";
 import Item from "./components/Item.js";
+import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
 
@@ -30,11 +31,14 @@ function Products(props) {
             <h5 className="optionsHead">Options</h5>
           </div>
           <div className="items">
+            {props.products.map((prod) => (
+              <Item prod={prod} />
+            ))}
+            {/* <Item />
             <Item />
             <Item />
             <Item />
-            <Item />
-            <Item />
+            <Item /> */}
           </div>
           <div className="footer"></div>
         </div>
@@ -43,4 +47,9 @@ function Products(props) {
   );
 }
 
-export default Products;
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+};
+export default connect(mapStateToProps)(Products);

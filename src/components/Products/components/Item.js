@@ -5,6 +5,7 @@ import soap from "../../../assets/soap-item.png";
 import threeDots from "../../../assets/threeDotsH.svg";
 
 function Item(props) {
+  const { prod } = props;
   const [anchorEl, setAnchorEl] = useState(null);
 
   const openMenu = (e) => {
@@ -16,10 +17,10 @@ function Item(props) {
         <div className="imgWrap">
           <img src={soap} />
         </div>
-        <h5>Lemongrass</h5>
+        <h5>{prod.name}</h5>
       </div>
       <div className="col2">
-        <h5>20</h5>
+        <h5>{prod.inventory}</h5>
       </div>
       <div className="col3">
         <h5>150</h5>
