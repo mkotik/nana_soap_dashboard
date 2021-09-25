@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import OptionsMenu from "./OptionsMenu";
 
-import soap from "../../../assets/soap-item.png";
+import test from "../../../assets/soap-item.png";
 import threeDots from "../../../assets/threeDotsH.svg";
 
 function Item(props) {
-  const { prod } = props;
+  const { soap } = props;
   const [anchorEl, setAnchorEl] = useState(null);
 
   const openMenu = (e) => {
@@ -15,12 +15,12 @@ function Item(props) {
     <div className="item">
       <div className="col1">
         <div className="imgWrap">
-          <img src={soap} />
+          <img src={test} />
         </div>
-        <h5>{prod.name}</h5>
+        <h5>{soap.name}</h5>
       </div>
       <div className="col2">
-        <h5>{prod.inventory}</h5>
+        <h5>{soap.inventory}</h5>
       </div>
       <div className="col3">
         <h5>150</h5>

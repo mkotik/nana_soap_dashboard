@@ -1,7 +1,10 @@
 import { SET_PRODUCTS } from "../actions";
 
 const initialState = {
-  products: [],
+  products: {
+    soaps: [],
+    giftBoxes: [],
+  },
 };
 
 export const reducer = (state = initialState, action) => {
