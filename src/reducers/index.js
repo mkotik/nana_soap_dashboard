@@ -1,18 +1,15 @@
-import { SET_PRODUCTS } from "../actions";
+import { SET_CATEGORIES } from "../actions";
 
 const initialState = {
-  products: {
-    soaps: [],
-    giftBoxes: [],
-  },
+  categories: [],
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_PRODUCTS: {
+    case SET_CATEGORIES: {
       return {
         ...state,
-        products: action.payload,
+        categories: action.payload,
       };
     }
     default:

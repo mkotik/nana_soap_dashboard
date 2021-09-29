@@ -9,6 +9,7 @@ $money-green: #48ad96;
 
 .products {
   background-color: $primary;
+
   .top {
     display: flex;
     justify-content: space-between;
@@ -41,8 +42,11 @@ $money-green: #48ad96;
     margin-top: 2rem;
     border-radius: 10px;
     box-shadow: 3px 2px 15px $dark-2;
-    .header {
+    .categoriesTitle {
       border-radius: 10px 10px 0px 0px;
+      background-color: $secondary;
+    }
+    .header {
       width: 100%;
       height: 3rem;
       background-color: $secondary;

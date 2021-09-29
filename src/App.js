@@ -1,7 +1,6 @@
 import React from "react";
 import { AddProduct, Header, Products, EditProduct } from "./components";
 import { Route, Switch } from "react-router-dom";
-import { setProducts } from "./actions";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App(props) {

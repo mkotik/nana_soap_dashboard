@@ -5,7 +5,8 @@ import test from "../../../assets/soap-item.png";
 import threeDots from "../../../assets/threeDotsH.svg";
 
 function Item(props) {
-  const { soap } = props;
+  const { product } = props;
+  const mainImg = product.images.find((img) => img.primary);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const openMenu = (e) => {
@@ -14,19 +15,19 @@ function Item(props) {
   return (
     <div className="item">
       <div className="col1">
-        <div className="imgWrap">
-          <img src={test} />
+        <div className="imgWrap d-flex justify-content-center align-items-center">
+          <img src={mainImg.image_url} />
         </div>
-        <h5>{soap.name}</h5>
+        <h5>{product.name}</h5>
       </div>
       <div className="col2">
-        <h5>{soap.inventory}</h5>
+        <h5>{product.inventory}</h5>
       </div>
       <div className="col3">
-        <h5>150</h5>
+        <h5>{product.quantitySold}</h5>
       </div>
       <div className="col4">
-        <h5 className="salesText text-success">$1200.00</h5>
+        <h5 className="salesText text-success">${product.sales.toFixed(2)}</h5>
       </div>
       <div className="col5">
         <div
