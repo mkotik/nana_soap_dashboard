@@ -8,14 +8,9 @@ import { setCategories } from "../../actions";
 import { Link } from "react-router-dom";
 
 function Products(props) {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const openMenu = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get("http://localhost:5000/api/products/all")
       .then((res) => {
         props.setCategories(res.data);
         console.log(res);

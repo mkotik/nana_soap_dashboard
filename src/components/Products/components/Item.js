@@ -15,8 +15,8 @@ function Item(props) {
   return (
     <div className="item">
       <div className="col1">
-        <div className="imgWrap d-flex justify-content-center align-items-center">
-          <img src={mainImg.image_url} />
+        <div className="imgWrap d-flex justify-content-center align-items-center p-1">
+          {mainImg && <img src={mainImg.image_url} alt="product img" />}
         </div>
         <h5>{product.name}</h5>
       </div>
@@ -35,7 +35,7 @@ function Item(props) {
           style={{ borderRadius: "50%" }}
           onClick={openMenu}
         >
-          <img src={threeDots} />
+          <img src={threeDots} alt="options menu" />
         </div>
       </div>
       <OptionsMenu anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
