@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import YouSure from "./YouSure.js";
+import YouSureDelete from "./YouSureDelete.js";
 
 function optionsMenu(props) {
-  const { setAnchorEl, anchorEl } = props;
+  const { setAnchorEl, anchorEl, prodId } = props;
   const handleClose = (e) => {
     setAnchorEl(null);
   };
@@ -22,7 +22,7 @@ function optionsMenu(props) {
           <MenuItem onClick={handleClose}>EDIT</MenuItem>
         </Link>
         <div onClick={handleClose}>
-          <YouSure closeMenu1={handleClose} />
+          <YouSureDelete closeMenu1={handleClose} prodId={prodId} />
         </div>
       </Menu>
     </div>

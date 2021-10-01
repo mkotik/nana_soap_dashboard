@@ -3,6 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import axios from "axios";
+import { setCategories } from "../../../actions";
+import { connect } from "react-redux";
+import Swal from "sweetalert2";
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -11,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SaveButton(props) {
-  const { closeMenu1 } = props;
+  const { closeMenu1, prodId } = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -25,6 +29,32 @@ function SaveButton(props) {
     event.stopPropagation();
     setAnchorEl(null);
     closeMenu1();
+  };
+
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    setAnchorEl(null);
+    closeMenu1();
+    axios
+      .delete(`http://localhost:5000/api/products/${prodId}`)
+      .then((res) => {
+        props.setCategories(res.data);
+        Swal.fire({
+          icon: "success",
+          title: "Product Successfully Deleted",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((err) => {
+        console.dir(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: `<p>${err.response.data.message}</p>`,
+        });
+      });
   };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
@@ -59,6 +89,7 @@ function SaveButton(props) {
             Are you sure ?
           </Typography>
           <Button
+            onClick={handleDelete}
             style={{
               backgroundColor: "#198754",
               color: "white",
@@ -83,4 +114,4 @@ function SaveButton(props) {
   );
 }
 
-export default SaveButton;
+export default connect(null, { setCategories })(SaveButton);

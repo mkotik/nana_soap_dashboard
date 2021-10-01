@@ -38,7 +38,11 @@ function Item(props) {
           <img src={threeDots} alt="options menu" />
         </div>
       </div>
-      <OptionsMenu anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+      <OptionsMenu
+        anchorEl={anchorEl}
+        setAnchorEl={setAnchorEl}
+        prodId={product.product_id}
+      />
     </div>
   );
 }
