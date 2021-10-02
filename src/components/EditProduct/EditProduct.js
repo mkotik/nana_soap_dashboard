@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import "../../styles/AddProduct.scss";
 import { CircularProgress } from "@mui/material";
+import axios from "axios";
+import { setCategories } from "../../actions";
+import { connect } from "react-redux";
+import Swal from "sweetalert2";
 
 function AddProduct(props) {
   const location = useLocation();
+  const { push } = useHistory();
   const product = location.state.product;
   console.log(product);
   const initialState = {
@@ -38,6 +43,33 @@ function AddProduct(props) {
       inventory: Number(formData.inventory),
     };
     console.log(formDataWithNumbers);
+
+    axios
+      .put(
+        `http://localhost:5000/api/products/${product.product_id}`,
+        formDataWithNumbers
+      )
+      .then((res) => {
+        console.log(res);
+        props.setCategories(res.data);
+        Swal.fire({
+          icon: "success",
+          title: "Changes Saved",
+          showConfirmButton: true,
+          confirmButtonText: "Back to Products",
+        }).then(() => {
+          push("/");
+        });
+      })
+      .catch((err) => {
+        console.dir(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: `<p>${err.response.data.message}</p>`,
+        });
+      });
   };
 
   return (
@@ -144,7 +176,7 @@ function AddProduct(props) {
             </div>
             <div className="d-flex justify-content-center">
               <button className="btn btn-success half" type="submit">
-                Add New Product
+                Save Changes
               </button>
             </div>
           </div>
@@ -154,4 +186,4 @@ function AddProduct(props) {
   );
 }
 
-export default AddProduct;
+export default connect(null, { setCategories })(AddProduct);

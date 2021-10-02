@@ -78,68 +78,89 @@ function AddProduct(props) {
         >
           <div className="productDetails">
             <h5>Add Product</h5>
-            <input
-              placeholder="Name"
-              className="full"
-              onChange={onChange}
-              name="name"
-              value={formData.name}
-            />
-            <div className="d-flex justify-content-between">
-              <select
-                name="category"
-                className="half"
-                onChange={onChange}
-                value={formData.category}
-              >
-                <option value="">Category</option>
-                <option value="Body Bars">Body Bars</option>
-                <option value="Face Bars">Face Bars</option>
-                <option value="For Babies">For Babies</option>
-                <option value="Gift Boxes">Gift Boxes</option>
-              </select>
+            <label className=" d-flex flex-column justify-content-start full">
+              Name
               <input
-                placeholder="Inventory"
-                className="half"
+                placeholder="Name"
+                className="full"
                 onChange={onChange}
-                name="inventory"
-                value={formData.inventory}
+                name="name"
+                value={formData.name}
               />
+            </label>
+            <div className="d-flex justify-content-between">
+              <label className=" d-flex flex-column justify-content-start half">
+                Category
+                <select
+                  name="category"
+                  className="full"
+                  onChange={onChange}
+                  value={formData.category}
+                >
+                  <option value="">Category</option>
+                  <option value="Body Bars">Body Bars</option>
+                  <option value="Face Bars">Face Bars</option>
+                  <option value="For Babies">For Babies</option>
+                  <option value="Gift Boxes">Gift Boxes</option>
+                </select>
+              </label>
+              <label className=" d-flex flex-column justify-content-start half">
+                Inventory
+                <input
+                  placeholder="Inventory"
+                  className="full"
+                  onChange={onChange}
+                  name="inventory"
+                  value={formData.inventory}
+                />
+              </label>
             </div>
-            <textarea
-              placeholder="Description"
-              onChange={onChange}
-              name="description"
-              value={formData.description}
-            />
-            <input
-              placeholder="Price (Required)"
-              className="full"
-              onChange={onChange}
-              name="price"
-              value={formData.price}
-            />
-            <div className="d-flex justify-content-between">
-              <input
-                placeholder="Smells Like (optional)"
-                className="half"
+            <label className=" d-flex flex-column justify-content-start full">
+              Description
+              <textarea
+                placeholder="Description"
                 onChange={onChange}
-                name="smells_like"
-                value={formData.smells_like}
+                name="description"
+                value={formData.description}
               />
-              <select
-                name="exfoliation"
-                className="half"
+            </label>
+            <label className=" d-flex flex-column justify-content-start full">
+              Price
+              <input
+                placeholder="Price (Required)"
+                className="full"
                 onChange={onChange}
-                value={formData.exfoliation}
-              >
-                <option value="">Exfoliation (optional)</option>
-                <option value="None">None</option>
-                <option value="Light">Light</option>
-                <option value="Medium">Medium</option>
-                <option value="Heavy">Heavy</option>
-                <option value="Extra Heavy">Extra Heavy</option>
-              </select>
+                name="price"
+                value={formData.price}
+              />
+            </label>
+            <div className="d-flex justify-content-between">
+              <label className=" d-flex flex-column justify-content-start half">
+                Smells Like
+                <input
+                  placeholder="Smells Like (optional)"
+                  className="full"
+                  onChange={onChange}
+                  name="smells_like"
+                  value={formData.smells_like}
+                />
+              </label>
+              <label className=" d-flex flex-column justify-content-start half">
+                Exfoliation
+                <select
+                  name="exfoliation"
+                  className="full"
+                  onChange={onChange}
+                  value={formData.exfoliation}
+                >
+                  <option value="">Exfoliation (optional)</option>
+                  <option value="None">None</option>
+                  <option value="Light">Light</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Heavy">Heavy</option>
+                  <option value="Extra Heavy">Extra Heavy</option>
+                </select>
+              </label>
             </div>
             <div className="d-flex justify-content-center">
               <button className="btn btn-success half" type="submit">
