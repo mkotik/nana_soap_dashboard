@@ -24,7 +24,6 @@ function AddProduct(props) {
   const onChange = (e) => {
     const { value, name } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log(formData);
   };
 
   const handleSubmit = (e) => {
@@ -40,7 +39,6 @@ function AddProduct(props) {
       .post("http://localhost:5000/api/products", formDataWithNumbers)
       .then((res) => {
         setIsFetching(false);
-        console.log(res);
         props.setCategories(res.data);
         Swal.fire({
           icon: "success",

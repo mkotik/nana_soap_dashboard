@@ -1,5 +1,11 @@
 import React from "react";
-import { AddProduct, Header, Products, EditProduct } from "./components";
+import {
+  AddProduct,
+  Header,
+  Products,
+  EditProduct,
+  ProductImages,
+} from "./components";
 import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -13,6 +19,9 @@ function App(props) {
         </Route>
         <Route exact path="/addproduct">
           <AddProduct />
+        </Route>
+        <Route exact path="/products/:id/images">
+          <ProductImages />
         </Route>
         <Route exact path="/editproduct">
           <EditProduct />
