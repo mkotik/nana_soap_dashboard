@@ -5,6 +5,7 @@ import {
   Products,
   EditProduct,
   ProductImages,
+  Orders,
 } from "./components";
 import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +26,9 @@ function App(props) {
         </Route>
         <Route exact path="/editproduct">
           <EditProduct />
+        </Route>
+        <Route>
+          <Orders />
         </Route>
       </Switch>
     </div>

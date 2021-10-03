@@ -26,9 +26,11 @@ function Header(props) {
             <li className="nav-item">
               <a className="nav-link text-center">Analytics</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link text-center">Sales</a>
-            </li>
+            <Link to="/orders" className="text-decoration-none">
+              <li className="nav-item">
+                <a className="nav-link text-center">Orders</a>
+              </li>
+            </Link>
             <li className="nav-item">
               <a className="nav-link text-center">Mailing List </a>
             </li>

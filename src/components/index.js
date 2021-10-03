@@ -3,3 +3,4 @@ export { default as Products } from "./Products/Products";
 export { default as AddProduct } from "./AddProduct/AddProduct";
 export { default as EditProduct } from "./EditProduct/EditProduct";
 export { default as ProductImages } from "./ProductImages/ProductImages";
+export { default as Orders } from "./Orders/Orders";
