@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function Products(props) {
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products/categories")
+      .get("https://nanasoapsbackend.herokuapp.com/api/products/categories")
       .then((res) => {
         props.setCategories(res.data);
         console.log(res);

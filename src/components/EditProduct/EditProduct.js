@@ -46,7 +46,7 @@ function AddProduct(props) {
 
     axios
       .put(
-        `http://localhost:5000/api/products/${product.product_id}`,
+        `https://nanasoapsbackend.herokuapp.com/api/products//${product.product_id}`,
         formDataWithNumbers
       )
       .then((res) => {

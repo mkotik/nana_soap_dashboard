@@ -19,6 +19,7 @@ function Item(props) {
           {/* {mainImg && <img src={mainImg.image_url} alt="product img" />} */}
           <img
             src={`https://nana-soaps-products.s3.us-east-2.amazonaws.com/${product.product_id}`}
+            alt="soap product"
           />
         </div>
         <h5>{product.name}</h5>

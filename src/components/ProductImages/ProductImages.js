@@ -11,11 +11,14 @@ function ProductImages(props) {
   const [s3URL, setS3URL] = useState(null);
   const [img, setImg] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
+
   useEffect(() => {
     setIsFetching(true);
     setImg(`https://nana-soaps-products.s3.us-east-2.amazonaws.com/${id}`);
     axios
-      .post("http://localhost:5000/api/products/s3Url", { imgName: id })
+      .post("https://nanasoapsbackend.herokuapp.com/api/products/s3Url", {
+        imgName: id,
+      })
       .then((res) => {
         console.log(res.data);
         setS3URL(res.data.url);
